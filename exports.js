@@ -16,11 +16,11 @@ exports.handler = function (event, context, callback) {
     //     "isBase64Encoded": "A boolean flag to indicate if the applicable request payload is Base64-encode"
     // }
 
-    const roleToRemove = event.queryStringParameters.id ;
+    const idToRemove = event.queryStringParameters.id ;
 
     const conn = "pg://dev:sunmicrordssp1der@micrords.ckeww55ptuog.eu-west-1.rds.amazonaws.com:5432/mydb";
     
-    const query = "DELETE FROM roles WHERE role='" + roleToRemove + "';"
+    const query = "DELETE FROM roles WHERE id='" + idToRemove + "';";
     
     const { Client } = require('pg');
 
